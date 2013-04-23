@@ -11,6 +11,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+# Prebuilt libraries that are needed to build open-source libraries
+PRODUCT_COPY_FILES := \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:obj/lib/libcamera.so
+
 ## Audio
 PRODUCT_COPY_FILES += \
 vendor/samsung/totoro/proprietary/lib/hw/acoustics.default.so:system/lib/hw/acoustics.default.so \
@@ -21,10 +26,23 @@ vendor/samsung/totoro/proprietary/lib/libaudio.so:system/lib/libaudio.so
 PRODUCT_COPY_FILES += \
 vendor/samsung/totoro/proprietary/bin/BCM4330B1_002.001.003.0634.0652.hcd:system/bin/BCM4330B1_002.001.003.0634.0652.hcd 
 
+## Camera
+PRODUCT_COPY_FILES += \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:system/lib/libarccamera.so \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:system/lib/libbrcmjpeg.so \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:system/lib/libcamera.so \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:system/lib/libcamera_client.so \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:system/lib/libcameraservice.so \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:system/lib/libCaMotion.so \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:system/lib/libcaps.so \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:system/lib/libPanoramax1.so \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:system/lib/libseccamera.so \
+vendor/samsung/totoro/proprietary/lib/libcamera.so:system/lib/libseccameraadaptor.so 
+
 ## Graphics
 PRODUCT_COPY_FILES += \
 vendor/samsung/totoro/proprietary/lib/egl/libGLES_hgl.so:system/lib/egl/libGLES_hgl.so \
-vendor/samsung/totoro/proprietary/lib/hw/gralloc.default.so:system/lib/hw/gralloc.default.so
+vendor/samsung/totoro/proprietary/lib/hw/gralloc.bcm21553.so:system/lib/hw/gralloc.bcm21553.so
 
 ## GPS
 PRODUCT_COPY_FILES += \
